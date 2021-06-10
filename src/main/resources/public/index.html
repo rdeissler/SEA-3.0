@@ -22,9 +22,37 @@
     										<!-- HTML 5. Kann man schließen (XML-konform), muss man aber nicht    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     										<!-- meta:  -->
+  
   </head>
   <!-- body: sichtbare Bereich -->
   <body>
+  
+   <!--   wenn der Script hier steht, weiß man nicht, ob der Script ausgeführt wird, bevor der Compiler den Paragraph p mit id="id4711" gezogen hat.
+   		Deshalb lagert man den Script in eine Datei (myscript.js aus
+   <script >
+   var para = document.getElementById("id4711");
+   para.textContent = 'Erster Paragraph';
+  
+   
+   </script>
+    -->
+   <h2>Script</h2>
+   
+   <script src="myscript.js" type="module"></script>
+   
+   
+    										
+    		<hr>    <!-- Linie -->
+    		</hr>								
+    										
+  
+  
+  
+  
+  <p id="id4711">
+  Abschnitt/Paragraph/Absatz
+  </p>
+  
     <h1>Liste der Personen</h1> 			<!-- h: header -->
 
 <h2>Hallo Thorsten</h2>
@@ -43,23 +71,6 @@
     <h1>einfache Tabelle</h1>
 
 <!-- https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle -->
-<table>
-  <tr>
-    <th>Berlin</th>
-    <th>Hamburg</th>
-    <th>München</th>
-  </tr>
-  <tr>
-    <td>Miljöh</td>
-    <td>Kiez</td>
-    <td>Bierdampf</td>
-   </tr>
-   <tr>
-     <td>Buletten</td>
-     <td>Frikadellen</td>
-     <td>Fleischpflanzerl</td>
-   </tr>
-</table>
 
 
 <table class="table table-dark table-striped">
