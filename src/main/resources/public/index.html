@@ -22,96 +22,64 @@
     										<!-- HTML 5. Kann man schließen (XML-konform), muss man aber nicht    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     										<!-- meta:  -->
+   
+    <script src="javaScript/myscript.js" type="module"></script>
+    </head>
   
-  </head>
   <!-- body: sichtbare Bereich -->
   <body>
   
-   <!--   wenn der Script hier steht, weiß man nicht, ob der Script ausgeführt wird, bevor der Compiler den Paragraph p mit id="id4711" gezogen hat.
+   <!--   wenn der Script hier steht, weiß man nicht, ob der Script ausgeführt wird, bevor der Compiler den Paragraph p mit id="id4711" geparst hat.
    		Deshalb lagert man den Script in eine Datei (myscript.js aus
    <script >
    var para = document.getElementById("id4711");
    para.textContent = 'Erster Paragraph';
-  
-   
    </script>
     -->
-   <h2>Script</h2>
-   
-   <script src="myscript.js" type="module"></script>
-   
-   
-    										
-    		<hr>    <!-- Linie -->
-    		</hr>								
-    										
   
-  
-  
-  
-  <p id="id4711">
-  Abschnitt/Paragraph/Absatz
-  </p>
-  
-    <h1>Liste der Personen</h1> 			<!-- h: header -->
+    
+    			<!-- h: header -->
 
-<h2>Hallo Thorsten</h2>
-<p> Heute ist ein schöner Tag.</p>
+<h1>SEA Kurs</h1>
+ <p>Liste der Personen</p>
 
- <h1>Überschrift</h1>
-    <p>
-       Abschnitt/Paragraph/Absatz
-    </p>
-    <h2>Überschrift</h2>
-    <h3>Überschrift</h3>
-    <h4>Überschrift</h4>
-    <p>
-       Abschnitt/Paragraph/Absatz
-    </p>
-    <h1>einfache Tabelle</h1>
 
 <!-- https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle -->
 
+ <h2>Tabelle</h2>
 
-<table class="table table-dark table-striped">
-  <thead>
+<table class="table table-dark table-striped" id="idTable001">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Pic</th>
-      <th scope="col">Vorname</th>
-      <th scope="col">Nachname</th>
-      <th scope="col">Handle</th>
+      <th>id</th>
+      <th >Anrede</th>
+      <th >Vorname</th>
+      <th >Nachname</th>
+      <th >pic</th>
     </tr>
-  </thead>
-  <tbody>
+ <!--  <tbody>
     <tr>
       <th scope="row">1</th>
-      <td><img src="images/man.png"></td>td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td id="id001">Herr</td>
+      <td id="id002">Mark</td>
+      <td id="id003">Otto</td>
+      <td><img src="images/man.png"></td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td><img src="images/frau.png"></td>td>
-      <td>Julia</td>
+      <td>Frau</td>
+      <td>Julia2</td>
       <td>Thornton</td>
-      <td>@fat</td>
+      <td><img src="images/frau.png"></td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td><img src="images/man.png"></td>td>
+      <td>Herr</td>
       <td>Larry</td>
       <td>the Bird</td>
-      <td>@twitter</td>
+      <td><img src="images/man.png"></td>
     </tr>
-  </tbody>
+  </tbody>  --> 
 </table>
-
-
-
-
-
-
+<p id="id4711">Abschnitt 2</p>
 </body>
 </html>
