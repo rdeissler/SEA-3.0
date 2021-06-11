@@ -3,60 +3,72 @@
 <head>
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/skeleton.css">
+<link rel=“icon” href=“images/favicon.ico” type=“image/gif” sizes=“16x16">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SEA Kurs</title>
 </head>  -->
 
 
-<!DOCTYPE html>								<!-- Für HTML 5. Nicht erforderlich, aber sauber -->
-<html lang="en">							<!-- Lang hat keine Besondere Bedeutung außer ggf. für Suchmaschinen oder so.
+<!DOCTYPE html>
+<!-- Für HTML 5. Nicht erforderlich, aber sauber -->
+<html lang="de">
+<!-- Lang hat keine Besondere Bedeutung außer ggf. für Suchmaschinen oder so.
 											<!-- Doppelte oder einfache Anführungsstriche sind ok bei Wertzuweisungen-->
-  <!-- head: NICHT-sichtbare Bereich -->
-  <head>
-    <title>Personen</title>
-    <!--  <link rel="stylesheet" href="css/normalize.css">
+<!-- head: NICHT-sichtbare Bereich -->
+<head>
+<title>Personen</title>
+<!--  <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <meta charset="UTF-8">					<!-- meta: charset legt fest wie Zeichen interpretiert werden sollen. -->
-    										<!-- HTML 5. Kann man schließen (XML-konform), muss man aber nicht    -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    										<!-- meta:  -->
-   
-    <script src="javaScript/myscript.js" type="module"></script>
-    </head>
-  
-  <!-- body: sichtbare Bereich -->
-  <body>
-  
-   <!--   wenn der Script hier steht, weiß man nicht, ob der Script ausgeführt wird, bevor der Compiler den Paragraph p mit id="id4711" geparst hat.
+    <link rel=“icon” href=“images/favicon.ico” type=“image/gif” sizes=“16x16">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
+<meta charset="UTF-8">
+<!-- meta: charset legt fest wie Zeichen interpretiert werden sollen. -->
+<!-- HTML 5. Kann man schließen (XML-konform), muss man aber nicht    -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- meta:  -->
+
+<script src="javaScript/myscript.js" type="module"></script>
+</head>
+
+<!-- body: sichtbare Bereich -->
+<body>
+
+	<!--   wenn der Script hier steht, weiß man nicht, ob der Script ausgeführt wird, bevor der Compiler den Paragraph p mit id="id4711" geparst hat.
    		Deshalb lagert man den Script in eine Datei (myscript.js aus
    <script >
    var para = document.getElementById("id4711");
    para.textContent = 'Erster Paragraph';
    </script>
     -->
-  
-    
-    			<!-- h: header -->
-
-<h1>SEA Kurs</h1>
- <p>Liste der Personen</p>
 
 
-<!-- https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle -->
+	<!-- h: header -->
+	<p id="id4711">Abschnitt 2</p>
+	<br>
 
- <h2>Tabelle</h2>
 
-<table class="table table-dark table-striped" id="idTable001">
-    <tr>
-      <th>id</th>
-      <th >Anrede</th>
-      <th >Vorname</th>
-      <th >Nachname</th>
-      <th >pic</th>
-    </tr>
- <!--  <tbody>
+	<h1>SEA Kurs</h1>
+	<p>Liste der Personen</p>
+
+
+	<!-- https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle -->
+
+	<h2>Tabelle</h2>
+
+	<table class="table table-grey table-striped" id="idTable001">
+		<tr>
+			<th>id</th>
+			<th>Anrede</th>
+			<th>Vorname</th>
+			<th>Nachname</th>
+			<th>pic</th>
+		</tr>
+		<!--  <tbody>
     <tr>
       <th scope="row">1</th>
       <td id="id001">Herr</td>
@@ -78,8 +90,26 @@
       <td>the Bird</td>
       <td><img src="images/man.png"></td>
     </tr>
-  </tbody>  --> 
-</table>
-<p id="id4711">Abschnitt 2</p>
+  </tbody>  -->
+	</table>
+
+	<h5>Join us!</h5>
+	<center>
+		<form id="submit">
+			<label for="vorname">First name:</label><br> 
+			<input type="text"id="vorname" name="vorname"><br> 
+			
+			<label for="nachname">Last name:</label><br> 
+			<input type="text" id="nachname" name="nachname"><br>
+			
+			<label for="anrede">Salutation:</label><br> 
+			<input type="text" id="anrede" name="anrede"><br> 
+			
+			<input id="button" type="submit" value="Submit">
+		</form>
+	</center>
+
+
+
 </body>
 </html>
