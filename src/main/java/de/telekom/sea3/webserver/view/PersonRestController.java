@@ -16,12 +16,13 @@ public class PersonRestController { // View
 
 	@Autowired
 	public PersonRestController(PersonService personService) {
-		super();
+		super(); 
+	//	this.getAllPersons();
 			this.personService = personService;
 	}
 
 		
-		@GetMapping("/allpersons")
+		@GetMapping("/json/persons/all") /**  @see URL: <a href= "http//localhost:8080/json/persons/all">URL</a> Kommentar */
 		@ResponseBody 
 		public String getAllPersons() { 
 			Personen personen = personService.getAllPersons();
@@ -45,6 +46,18 @@ public class PersonRestController { // View
 					+ "		}\n"
 					+ "	]\n"
 					+ "}";
+			return string1;
+		}
+		
+		
+		@GetMapping("/json/persons/size") /**  @see URL: <a href= "http//localhost:8080/json/persons/all">URL</a> Kommentar */
+		@ResponseBody 
+		public String getSize() { 
+			int size = personService.getSize();
+	//		personen.toJson();
+			String string1 = String.format("{\n"
+					+ "	\"size\": %d \n"
+					+ "}",size);
 			return string1;
 		}
 	
