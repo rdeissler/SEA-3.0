@@ -77,7 +77,7 @@ input.addEventListener("click", oninputclick);
 
 // fetch Statement (Anweisung)
 //fetch("http://localhost:8080/personen.json")
-fetch("personen.json")
+fetch("http://localhost:8080/allpersons")
 	.then(getJson) 								//  entspricht: .then( irgendwas => irgendwas.json() )
 	.then(getTxtFromJsonUndPackInsHTML); 		// entpricht: cell.textContent = myjson.personen[0].vorname);
 
