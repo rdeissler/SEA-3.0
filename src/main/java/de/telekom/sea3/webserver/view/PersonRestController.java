@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.telekom.sea3.webserver.model.Person;
@@ -38,9 +40,14 @@ public class PersonRestController { // View
 		return new Size(personService.getSize());
 	}
 
-	@GetMapping("/json/person/{id}")  //{id} anstelle einer festen ID z.B. 42
+	@GetMapping("/json/person/{id}") // {id} anstelle einer festen ID z.B. 42
 	public Person getPerson(@PathVariable("id") int id) {
 		return personService.get(id);
+	}
+
+	@PostMapping("/json/person")
+	public Person addPerson(@RequestBody Person person) {
+		return personService.add(person);
 	}
 
 }

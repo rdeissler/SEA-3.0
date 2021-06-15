@@ -8,7 +8,7 @@ import de.telekom.sea3.webserver.model.Personen;
 import de.telekom.sea3.webserver.repo.PersonRepository;
 
 @Service
-public class PersonService {  //Service
+public class PersonService { // Service
 
 	private static PersonRepository personRepository;
 
@@ -20,21 +20,21 @@ public class PersonService {  //Service
 		this.personRepository = personRepository;
 	}
 
-	
-
 	public int getSize() {
 		return personRepository.getSize();
 	}
-	
-	
+
 	public Personen getAllPersons() {
 		return new Personen();
 	}
 
-
-
 	public Person get(int id) {
 		return new Person("Rudi", "Maier", "Herr");
 	}
-	
+
+	public Person add(Person person) {
+		System.out.println("Person wurde angelegt: " +person.toString());
+		return person;
+	}
+
 }
