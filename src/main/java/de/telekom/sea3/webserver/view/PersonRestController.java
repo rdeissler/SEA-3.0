@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import de.telekom.sea3.webserver.model.Personen;
+import de.telekom.sea3.webserver.model.Size;
 import de.telekom.sea3.webserver.service.PersonService;
 
 @RestController
@@ -32,9 +33,9 @@ public class PersonRestController { // View
 	}
 
 	@GetMapping("/json/persons/size")
-	public Integer getSize() {
-		int size = personService.getSize();
-		return size;
+	public Size getSize() {
+		return new Size(personService.getSize());
+	
 	}
 
 }
