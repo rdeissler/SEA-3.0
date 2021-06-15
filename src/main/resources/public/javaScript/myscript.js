@@ -59,9 +59,10 @@ function oninputclick(event) {
 	console.log(nachname);
 	var anrede = document.getElementById("anrede").value;
 	console.log(anrede);
-	var jsondata = `{"anrede": ${anrede}, "vorname": "${vorname}", "nachname": "${nachname}"}`;
+	var jsondata = `{"anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}"}`;
 	console.log(jsondata);
-	fetch("http://localhost:8080/submitPerson", {  // fetch ist hier ein Push zum Server
+	
+	fetch("http://localhost:8080/json/person", {  // fetch ist hier ein Push zum Server
     	method: 'POST', // or PUT  hier wird ein http mit einem POST Request abgesetzt
 		body: jsondata,
 		headers: {
@@ -77,7 +78,7 @@ input.addEventListener("click", oninputclick);
 
 // fetch Statement (Anweisung)
 //fetch("http://localhost:8080/personen.json")
-fetch("personen.json")
+fetch("http://localhost:8080/json/persons/all")
 	.then(getJson) 								//  entspricht: .then( irgendwas => irgendwas.json() )
 	.then(getTxtFromJsonUndPackInsHTML); 		// entpricht: cell.textContent = myjson.personen[0].vorname);
 
