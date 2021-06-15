@@ -45,7 +45,7 @@ public class PersonRestController { // View
 		return personService.get(id);
 	}
 
-	@PostMapping("/json/person")
+	@PostMapping("/json/person")  //
 	public Person addPerson(@RequestBody Person person) {
 		return personService.add(person);
 	}

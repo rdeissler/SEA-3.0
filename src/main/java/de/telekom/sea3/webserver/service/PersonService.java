@@ -25,7 +25,7 @@ public class PersonService { // Service
 	}
 
 	public Personen getAllPersons() {
-		return new Personen();
+		return new Personen(personRepository.getAll());   //Wrapper wird für json benötigt
 	}
 
 	public Person get(int id) {
@@ -33,6 +33,7 @@ public class PersonService { // Service
 	}
 
 	public Person add(Person person) {
+		personRepository.add(person);
 		System.out.println("Person wurde angelegt: " +person.toString());
 		return person;
 	}
