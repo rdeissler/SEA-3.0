@@ -3,6 +3,7 @@ package de.telekom.sea3.webserver.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import de.telekom.sea3.webserver.model.Person;
 import de.telekom.sea3.webserver.model.Personen;
 import de.telekom.sea3.webserver.repo.PersonRepository;
 
@@ -28,6 +29,12 @@ public class PersonService {  //Service
 	
 	public Personen getAllPersons() {
 		return new Personen();
+	}
+
+
+
+	public Person get(int id) {
+		return new Person("Rudi", "Maier", "Herr");
 	}
 	
 }
