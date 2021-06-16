@@ -34,6 +34,7 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
 			+ "<td>" + laufvariable.ort + "</td>"
 			+ "<td>" + laufvariable.email + "</td>"
 			+ "<td><img src='" + getIcon(laufvariable.anrede) + "'></td>"
+			
 			+ "</tr>"
 		)
 		//			+ "<td><img src='images/man.png'></td>"
@@ -93,9 +94,27 @@ function oninputclick(event) {
 }
 
 
+function oninputdelclick(event) {
+	event.preventDefault(); 
+	var id = document.getElementById("id").value;
+	console.log(id)
+	
+	fetch(`http://localhost:8080/json/person/${id}`, {  
+		method: 'DELETE' 
+		
+	});
+	
+	}
+
+
 
 var input = document.getElementById("button");
 input.addEventListener("click", oninputclick);
+
+// delete Button
+var inputdel = document.getElementById("delbutton");
+inputdel.addEventListener("click", oninputdelclick);
+
 
 // fetch Statement (Anweisung)
 //fetch("http://localhost:8080/personen.json")

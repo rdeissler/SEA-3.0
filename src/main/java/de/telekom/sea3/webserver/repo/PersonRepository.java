@@ -21,15 +21,25 @@ public class PersonRepository { // get set Person
 		return personen.size();
 	}
 
-	
-	
 	public boolean add(Person person) {
 		return personen.add(person);
-		
 	}
-	
+
 	public List<Person> getAll() {
 		return personen;
-		
+	}
+
+	public boolean del(String id) {
+		for (int i = 0; i < personen.size(); i++) {
+
+			Person person = personen.get(i);
+			if (person.getId().equals(id)) {
+				personen.remove(i);
+				return true;
+
+			}
+			return false;
+		}
+		return false;
 	}
 }
