@@ -14,7 +14,7 @@ import de.telekom.sea3.webserver.model.Size;
 import de.telekom.sea3.webserver.service.PersonService;
 
 @RestController
-public class PersonRestController { // View
+public class PersonRestController { // View   --> liefert json Daten aus wegen @RestController
 
 	private PersonService personService;
 
@@ -50,4 +50,6 @@ public class PersonRestController { // View
 		return personService.add(person);
 	}
 
+	
+	
 }

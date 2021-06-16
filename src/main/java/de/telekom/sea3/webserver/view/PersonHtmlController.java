@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import de.telekom.sea3.webserver.service.PersonService;
 
-@Controller
+@Controller   // Controller liefert HTML zurück, aktuell nur für die size.html
 public class PersonHtmlController { // View
-
+	// hier als konstanter String, sollte eigentlich aus der HTML-Datei kommen
 	private static final String HTMLTEMPLATE = "<!DOCTYPE html> <html lang='de'> "
 			+ "<head> <meta charset='utf-8'> <meta name='viewport' content='width=device-width, initial-scale=1.0'> <title>Titel</title> </head> "
 			+ "<body>size: %d </body> </html>"; // HTML Grundgerüst für eine Webseite aus dem Internet, danach size %d
@@ -24,9 +24,9 @@ public class PersonHtmlController { // View
 		this.personService = personService;
 	}
 
-	
+	//Dynamischer Aufbau der Webseite durch Size (%d), die während der Laufzeit ermittelt wird (Anzahl der Personen)
 	@GetMapping("/size") 
-	@ResponseBody
+	@ResponseBody   // sagt Spring Framework, dass die Antwort in den Body gepackt werden soll
 	public String getSize() { 
 		String string5 = String.format(HTMLTEMPLATE, personService.getSize()); // Möglichkeit 5
 		return string5;

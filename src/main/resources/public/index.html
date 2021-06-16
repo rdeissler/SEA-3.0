@@ -20,7 +20,7 @@
 <title>Personen</title>
 <!--  <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">  -->
-    <link rel=“icon” href=“images/favicon.ico” type=“image/gif” sizes=“16x16">
+<link rel=“icon” href=“images/favicon.ico” type=“image/gif” sizes=“16x16">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -58,14 +58,21 @@
 
 	<!-- https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle -->
 
+ <font color=#FFAFAF>
 	<h2>Tabelle</h2>
-
+</font>
 	<table class="table table-grey table-striped" id="idTable001">
 		<tr>
+			<th>Nr.</th>
 			<th>id</th>
 			<th>Anrede</th>
 			<th>Vorname</th>
 			<th>Nachname</th>
+			<th>Straße</th>
+			<th>Hausnummer</th>
+			<th>Postleitzahl</th>
+			<th>Ort</th>
+			<th>Email</th>
 			<th>pic</th>
 		</tr>
 		<!--  <tbody>
@@ -94,22 +101,34 @@
 	</table>
 
 	<h5>Join us!</h5>
-	<center>
-		<form id="submit">
-			<label for="vorname">First name:</label><br> 
-			<input type="text"id="vorname" name="vorname"><br> 
-			
-			<label for="nachname">Last name:</label><br> 
-			<input type="text" id="nachname" name="nachname"><br>
-			
-			<label for="anrede">Salutation:</label><br> 
-			<input type="text" id="anrede" name="anrede"><br> 
-			
-			<input id="button" type="submit" value="Submit">
-		</form>
+
+	<form id="submit">
+		<center>
+
+			<label for="anrede">Anrede:</label><br> <select name="anrede"
+				id="anrede">
+				<option value="Auswahl">Bitte wählen Sie</option>
+				<option value="Herr">Herr</option>
+				<option value="Frau">Frau</option>
+				<option value="Divers">Divers</option>
+			</select> <br> <label for="id">ID:</label><br> <input type="text"
+				id="id" name="id"><br> <label for="vorname">Vorname:</label><br>
+
+			<input type="text" id="vorname" name="vorname"><br> <label
+				for="nachname">Nachname:</label><br> <input type="text"
+				id="nachname" name="nachname"><br> <label for="str">Straße:</label><br>
+			<input type="text" id="str" name="str"><br> <label
+				for="hausNr">Hausnummer:</label><br> <input type="text"
+				id="hausNr" name="hausNr"><br> <label for="plz">Postleitzahl:</label><br>
+			<input type="text" id="plz" name="plz"><br> <label
+				for="ort">Ort:</label><br> <input type="text" id="ort"
+				name="ort"><br> <label for="email">Email:</label><br>
+			<input type="text" id="email" name="email"><br> <input
+				id="button" type="submit" value="Submit">
+	</form>
+
+
 	</center>
-
-
 
 </body>
 </html>

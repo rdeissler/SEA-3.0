@@ -24,9 +24,15 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
 		tabelle.insertAdjacentHTML("beforeend",
 			"<tr>"
 			+ "<td>" + i + "</td>"
+			+ "<td>" + laufvariable.id + "</td>"
 			+ "<td>" + laufvariable.anrede + "</td>"
 			+ "<td>" + laufvariable.vorname + "</td>"
 			+ "<td>" + laufvariable.nachname + "</td>"
+			+ "<td>" + laufvariable.str + "</td>"
+			+ "<td>" + laufvariable.hausNr + "</td>"
+			+ "<td>" + laufvariable.plz + "</td>"
+			+ "<td>" + laufvariable.ort + "</td>"
+			+ "<td>" + laufvariable.email + "</td>"
 			+ "<td><img src='" + getIcon(laufvariable.anrede) + "'></td>"
 			+ "</tr>"
 		)
@@ -45,6 +51,8 @@ function getIcon(anrede) {
 			return 'images/man.png'
 		case "Frau":
 			return 'images/frau.png'
+		case "Divers":
+			return 'images/frau.png'
 		default:
 			return 'images/frau.png'
 	}
@@ -53,17 +61,30 @@ function getIcon(anrede) {
 function oninputclick(event) {
 	event.preventDefault();  // verhindert GET Request, Event wird nicht weiter vom Browser bearbeitet
 	console.log("Click");
+	var id = document.getElementById("id").value;
+	console.log(id);
+	var anrede = document.getElementById("anrede").value;
+	console.log(anrede);
 	var vorname = document.getElementById("vorname").value;
 	console.log(vorname);
 	var nachname = document.getElementById("nachname").value;
 	console.log(nachname);
-	var anrede = document.getElementById("anrede").value;
-	console.log(anrede);
-	var jsondata = `{"anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}"}`;
+	var str = document.getElementById("str").value;
+	console.log(str);
+	var hausNr = document.getElementById("hausNr").value;
+	console.log(hausNr);
+	var plz = document.getElementById("plz").value;
+	console.log(plz);
+	var ort = document.getElementById("ort").value;
+	console.log(ort);
+	var email = document.getElementById("email").value;
+	console.log(email);
+
+	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
 	console.log(jsondata);
-	
+
 	fetch("http://localhost:8080/json/person", {  // fetch ist hier ein Push zum Server
-    	method: 'POST', // or PUT  hier wird ein http mit einem POST Request abgesetzt
+		method: 'POST', // or PUT  hier wird ein http mit einem POST Request abgesetzt
 		body: jsondata,
 		headers: {
 			'Content-Type': 'application/json'
