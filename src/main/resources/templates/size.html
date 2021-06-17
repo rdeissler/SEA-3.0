@@ -5,7 +5,11 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<title>Titel</title>
 </head>
-<body>size: %d     <!-- %d ist ein Platzhalter, der noch durch Java Code ersetzt werden muss -->
+<body>
+<h1 th:text="${sizename}">Size!</h1>
+<h1 th:text="|Size: ${sizename}|">Size!</h1>
+<h1> <span style="color:#FF0000;"  th:text="|Size: ${sizename}|"></span>Size!<span>0</span></h1>
+<!-- %d ist ein Platzhalter, der noch durch Java Code ersetzt werden muss -->
 </body>
 </html>
 
