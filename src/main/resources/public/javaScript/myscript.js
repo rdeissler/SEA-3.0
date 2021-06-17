@@ -84,7 +84,7 @@ function oninputclick(event) {
 	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
 	console.log(jsondata);
 
-	fetch("http://localhost:8080/json/person", {  // fetch ist hier ein Push zum Server
+	fetch("/json/person", {  // fetch ist hier ein Push zum Server
 		method: 'POST', // or PUT  hier wird ein http mit einem POST Request abgesetzt
 		body: jsondata,
 		headers: {
@@ -101,7 +101,7 @@ function oninputdelclick(event) {
 	var id = document.getElementById("id").value;
 	console.log(id)
 	
-	fetch(`http://localhost:8080/json/person/${id}`, {  
+	fetch(`/json/person/${id}`, {  
 		method: 'DELETE' 
 		});
 	}
@@ -137,7 +137,7 @@ function oninputupdateclick(event) {
 	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
 	console.log(jsondata);
 	
-	fetch(`http://localhost:8080/json/person`, {  
+	fetch(`/json/person`, {  
 		method: 'PUT' ,
 		body: jsondata,
 		headers: {
@@ -177,7 +177,7 @@ input.addEventListener("click", oninputclick);
 
 // fetch Statement (Anweisung)
 //fetch("http://localhost:8080/personen.json")
-fetch("http://localhost:8080/json/persons/all")
+fetch("/json/persons/all")
 	.then(getJson) 								//  entspricht: .then( irgendwas => irgendwas.json() )
 	.then(getTxtFromJsonUndPackInsHTML); 		// entpricht: cell.textContent = myjson.personen[0].vorname);
 
