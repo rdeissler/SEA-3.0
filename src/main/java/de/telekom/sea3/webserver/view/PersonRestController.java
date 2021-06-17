@@ -56,16 +56,15 @@ public class PersonRestController { // View   --> liefert json Daten aus wegen @
 		return personService.del(id);
 	}
 	
-/*	@PutMapping("/json/person/{id}")	// {id} anstelle einer festen ID z.B. 42
-	public Person updatePerson(@PathVariable("id") String id) {
-		return personService.update(id);
-	}
-*/	
-	
 	@PutMapping("/json/person")	
 	public Person updatePerson(@RequestBody Person person) {
 		return personService.update(person);
 	}
 	
-	
+/*	@DeleteMapping("/json/persons/all")
+	public Personen deleteAllPersons() {
+		Personen personen = personService.deleteAllPersons();
+		return personen;
+	}
+*/
 }

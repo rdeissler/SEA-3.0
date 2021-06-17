@@ -95,7 +95,7 @@ function oninputclick(event) {
 
 
 
-
+//Delete One
 function oninputdelclick(event) {
 	event.preventDefault(); 
 	var id = document.getElementById("id").value;
@@ -106,7 +106,7 @@ function oninputdelclick(event) {
 		});
 	}
 	
-// delete Button
+// delete One Button
 var inputdel = document.getElementById("delbutton");
 inputdel.addEventListener("click", oninputdelclick);
 
@@ -150,9 +150,23 @@ function oninputupdateclick(event) {
 var inputupdate = document.getElementById("updatebutton");
 inputupdate.addEventListener("click", oninputupdateclick);
 
+/*
+//Delete All
+function oninputdelallclick(event) {
+	event.preventDefault(); 
+	var id = document.getElementById("id").value;
+	console.log(id)
+	
+	fetch(`http://localhost:8080/json/persons/all`, {  
+		method: 'DELETE' 
+		});
+	}
+	
+// delete All Button
+var inputdelall = document.getElementById("delallbutton");
+inputdelall.addEventListener("click", oninputdelallclick);
 
-
-
+*/
 
 
 var input = document.getElementById("button");
