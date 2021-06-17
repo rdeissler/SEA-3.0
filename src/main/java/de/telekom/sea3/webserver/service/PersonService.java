@@ -45,4 +45,18 @@ public class PersonService { // Service
 		return null;
 	}
 
+/*	public Person update(String id) {
+		personRepository.update(id);
+		System.out.println("Person wurde geändert");
+		return null;
+	}
+	*/
+	
+	public Person update(Person person) {
+		personRepository.update(person);
+		System.out.println("Person wurde geändert");
+		return null;
+	}
+	
+	
 }

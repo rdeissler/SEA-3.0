@@ -111,6 +111,49 @@ var inputdel = document.getElementById("delbutton");
 inputdel.addEventListener("click", oninputdelclick);
 
 
+// Update
+
+function oninputupdateclick(event) {
+	event.preventDefault(); 
+	var id = document.getElementById("id").value;
+	console.log(id)
+	var anrede = document.getElementById("anrede").value;
+	console.log(anrede);
+	var vorname = document.getElementById("vorname").value;
+	console.log(vorname);
+	var nachname = document.getElementById("nachname").value;
+	console.log(nachname);
+	var str = document.getElementById("str").value;
+	console.log(str);
+	var hausNr = document.getElementById("hausNr").value;
+	console.log(hausNr);
+	var plz = document.getElementById("plz").value;
+	console.log(plz);
+	var ort = document.getElementById("ort").value;
+	console.log(ort);
+	var email = document.getElementById("email").value;
+	console.log(email);
+
+	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
+	console.log(jsondata);
+	
+	fetch(`http://localhost:8080/json/person`, {  
+		method: 'PUT' ,
+		body: jsondata,
+		headers: {
+			'Content-Type': 'application/json'
+			}
+		});
+	}
+
+// Update Button
+var inputupdate = document.getElementById("updatebutton");
+inputupdate.addEventListener("click", oninputupdateclick);
+
+
+
+
+
 
 var input = document.getElementById("button");
 input.addEventListener("click", oninputclick);

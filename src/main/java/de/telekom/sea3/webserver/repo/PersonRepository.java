@@ -40,4 +40,31 @@ public class PersonRepository { // get set Person
 		}
 		return false;
 	}
+	
+/*	public boolean update(String id) {
+		for (int i = 0; i < personen.size(); i++) {
+
+			Person person = personen.get(i);
+			if (person.getId().equals(id)) {
+				personen.set(i, person);
+				return true;
+			}
+		}
+		return false;
+	}
+*/
+	
+	public boolean update(Person person) {
+		for (int i = 0; i < personen.size(); i++) {
+
+			Person person1 = personen.get(i);
+			if (person1.getId().equals(person.getId())) {
+				personen.set(i, person);
+				return true;
+			}
+		}
+		return false;
+	}	
+	
+	
 }
