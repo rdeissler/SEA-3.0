@@ -29,13 +29,20 @@ public class PersonService { // Service
 	}
 
 	public Person get(int id) {
-		return new Person("Rudi", "Maier", "Herr");
+		return new Person( "id",  "anrede", "vorname",  "nachname",   "str",  "hausNr",  "plz",
+				 "ort",  "email");
 	}
 
 	public Person add(Person person) {
 		personRepository.add(person);
 		System.out.println("Person wurde angelegt: " +person.toString());
 		return person;
+	}
+
+	public Person del(String id) {
+		personRepository.del(id);
+		System.out.println("Person wurde gelöscht");
+		return null;
 	}
 
 }

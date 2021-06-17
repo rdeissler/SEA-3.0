@@ -1,7 +1,7 @@
 package de.telekom.sea3.webserver.view;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +14,7 @@ import de.telekom.sea3.webserver.model.Size;
 import de.telekom.sea3.webserver.service.PersonService;
 
 @RestController
-public class PersonRestController { // View
+public class PersonRestController { // View   --> liefert json Daten aus wegen @RestController
 
 	private PersonService personService;
 
@@ -50,4 +50,9 @@ public class PersonRestController { // View
 		return personService.add(person);
 	}
 
+	@DeleteMapping("/json/person/{id}")	// {id} anstelle einer festen ID z.B. 42
+	public Person delPerson(@PathVariable("id") String id) {
+		return personService.del(id);
+	}
+	
 }
