@@ -84,7 +84,7 @@ function oninputclick(event) {
 	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
 	console.log(jsondata);
 
-	fetch("http://localhost:8080/json/person", {  // fetch ist hier ein Push zum Server
+	fetch("/json/person", {  // fetch ist hier ein Push zum Server
 		method: 'POST', // or PUT  hier wird ein http mit einem POST Request abgesetzt
 		body: jsondata,
 		headers: {
@@ -95,21 +95,78 @@ function oninputclick(event) {
 
 
 
-
+//Delete One
 function oninputdelclick(event) {
 	event.preventDefault(); 
 	var id = document.getElementById("id").value;
 	console.log(id)
 	
-	fetch(`http://localhost:8080/json/person/${id}`, {  
+	fetch(`/json/person/${id}`, {  
 		method: 'DELETE' 
 		});
 	}
 	
-// delete Button
+// delete One Button
 var inputdel = document.getElementById("delbutton");
 inputdel.addEventListener("click", oninputdelclick);
 
+
+// Update
+
+function oninputupdateclick(event) {
+	event.preventDefault(); 
+	var id = document.getElementById("id").value;
+	console.log(id)
+	var anrede = document.getElementById("anrede").value;
+	console.log(anrede);
+	var vorname = document.getElementById("vorname").value;
+	console.log(vorname);
+	var nachname = document.getElementById("nachname").value;
+	console.log(nachname);
+	var str = document.getElementById("str").value;
+	console.log(str);
+	var hausNr = document.getElementById("hausNr").value;
+	console.log(hausNr);
+	var plz = document.getElementById("plz").value;
+	console.log(plz);
+	var ort = document.getElementById("ort").value;
+	console.log(ort);
+	var email = document.getElementById("email").value;
+	console.log(email);
+
+	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
+	console.log(jsondata);
+	
+	fetch(`/json/person`, {  
+		method: 'PUT' ,
+		body: jsondata,
+		headers: {
+			'Content-Type': 'application/json'
+			}
+		});
+	}
+
+// Update Button
+var inputupdate = document.getElementById("updatebutton");
+inputupdate.addEventListener("click", oninputupdateclick);
+
+/*
+//Delete All
+function oninputdelallclick(event) {
+	event.preventDefault(); 
+	var id = document.getElementById("id").value;
+	console.log(id)
+	
+	fetch(`http://localhost:8080/json/persons/all`, {  
+		method: 'DELETE' 
+		});
+	}
+	
+// delete All Button
+var inputdelall = document.getElementById("delallbutton");
+inputdelall.addEventListener("click", oninputdelallclick);
+
+*/
 
 
 var input = document.getElementById("button");
@@ -120,7 +177,7 @@ input.addEventListener("click", oninputclick);
 
 // fetch Statement (Anweisung)
 //fetch("http://localhost:8080/personen.json")
-fetch("http://localhost:8080/json/persons/all")
+fetch("/json/persons/all")
 	.then(getJson) 								//  entspricht: .then( irgendwas => irgendwas.json() )
 	.then(getTxtFromJsonUndPackInsHTML); 		// entpricht: cell.textContent = myjson.personen[0].vorname);
 

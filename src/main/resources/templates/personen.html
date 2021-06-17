@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+
+<html lang='de' xmls:th="http://www.thymeleaf.org">
+<head>
+<title>Personen</title>
+<!--  <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">  -->
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="javaScript/myscript.js" type="module"></script>
+</head>
+
+<!-- body: sichtbare Bereich -->
+<body>
+
+	<!-- h: header -->
+	<p id="id4711">Abschnitt 2</p>
+	<br>
+
+
+	<h1>SEA Kurs</h1>
+	<p>Liste der Personen</p>
+
+
+
+<!--  
+	<font color=#FFAFAF>
+		<h2>Tabelle</h2>
+	</font>
+	<table class="table table-grey table-striped" id="idTable001">
+		<tr>
+			<th>Nr.</th>
+			<th>id</th>
+			<th>Anrede</th>
+			<th>Vorname</th>
+			<th>Nachname</th>
+			<th>Straße</th>
+			<th>Hausnummer</th>
+			<th>Postleitzahl</th>
+			<th>Ort</th>
+			<th>Email</th>
+			<th>pic</th>
+		</tr>
+
+	
+-->
+
+
+<ul th:each="person : ${personenList}">
+<!-- <li th:text="${person.nummer}">Nr.</li>   -->
+<li th:text="${person.id}">id</li>
+<li th:text="${person.anrede}">Anrede</li>
+    <li th:text="${person.vorname}">Vorname</li>
+    <li th:text="${person.nachname}">Nachname</li>
+        <li th:text="${person.str}">Straße</li>
+        <li th:text="${person.hausNr}">Hausnummer</li>
+        <li th:text="${person.plz}">Postleitzahl</li>
+        <li th:text="${person.ort}">Ort</li>  
+        <li th:text="${person.email}">Email</li>  
+</ul>
+
+
+<!--</table>  --> 
+
+
+
+</body>
+</html>

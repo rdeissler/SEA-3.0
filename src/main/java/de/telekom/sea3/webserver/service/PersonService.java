@@ -44,5 +44,16 @@ public class PersonService { // Service
 		System.out.println("Person wurde gelöscht");
 		return null;
 	}
+	
+	public Person update(Person person) {
+		personRepository.update(person);
+		System.out.println("Person wurde geändert");
+		return null;
+	}
 
+	
+	
+/*	public Personen deleteAllPersons() {
+		return new Personen(personRepository.deleteAll()); 
+	} */
 }
