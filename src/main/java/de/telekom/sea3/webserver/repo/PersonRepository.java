@@ -36,9 +36,7 @@ public class PersonRepository { // get set Person
 			if (person.getId().equals(id)) {
 				personen.remove(i);
 				return true;
-
 			}
-			return false;
 		}
 		return false;
 	}

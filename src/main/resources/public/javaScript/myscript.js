@@ -94,6 +94,8 @@ function oninputclick(event) {
 }
 
 
+
+
 function oninputdelclick(event) {
 	event.preventDefault(); 
 	var id = document.getElementById("id").value;
@@ -101,19 +103,19 @@ function oninputdelclick(event) {
 	
 	fetch(`http://localhost:8080/json/person/${id}`, {  
 		method: 'DELETE' 
-		
-	});
-	
+		});
 	}
+	
+// delete Button
+var inputdel = document.getElementById("delbutton");
+inputdel.addEventListener("click", oninputdelclick);
 
 
 
 var input = document.getElementById("button");
 input.addEventListener("click", oninputclick);
 
-// delete Button
-var inputdel = document.getElementById("delbutton");
-inputdel.addEventListener("click", oninputdelclick);
+
 
 
 // fetch Statement (Anweisung)
