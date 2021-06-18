@@ -18,8 +18,9 @@
 <!-- head: NICHT-sichtbare Bereich -->
 <head>
 <title>Personen</title>
-<!--  <link rel="stylesheet" href="css/normalize.css">
+<!--  <link rel="stylesheet" href="css/normalize.css"> 
     <link rel="stylesheet" href="css/skeleton.css">  -->
+      <link rel="stylesheet" href="css/mycss.css">  
 <link rel=“icon” href=“images/favicon.gif” type=“image/gif” sizes=“16x16">
 <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.png}"/>
 <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
@@ -38,7 +39,7 @@
 </head>
 
 <!-- body: sichtbare Bereich -->
-<body>
+<body id="bodyid">
 
 	<!--   wenn der Script hier steht, weiß man nicht, ob der Script ausgeführt wird, bevor der Compiler den Paragraph p mit id="id4711" geparst hat.
    		Deshalb lagert man den Script in eine Datei (myscript.js aus
@@ -50,19 +51,17 @@
 
 
 	<!-- h: header -->
-	<p id="id4711">Abschnitt 2</p>
+	
 	<br>
 
-
+<div class="fancy">
 	<h1>SEA Kurs</h1>
-	<p>Liste der Personen</p>
-
+	<p> <span>Personenliste</span></p>
+</div>
 
 	<!-- https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle -->
 
- <font color=#FFAFAF>
-	<h2>Tabelle</h2>
-</font>
+ 
 	<table class="table table-grey table-striped" id="idTable001">
 		<tr>
 			<th>Nr.</th>
@@ -100,9 +99,9 @@
       <td><img src="images/man.png"></td>
     </tr>
   </tbody>  -->
-	</table>
+	</table class="table">
 
-	<h5>Join us!</h5>
+
 
 	<form id="submit">
 		<center>
@@ -131,7 +130,7 @@
 				<label for="plz">Postleitzahl:</label><br>
 			<input type="text" id="plz" name="plz"><br> 
 			
-			<labelfor="ort">Ort:</label><br> 
+			<label for="ort">Ort:</label><br> 
 			<input type="text" id="ort" name="ort"><br> 
 			
 			<label for="email">Email:</label><br>
@@ -144,9 +143,11 @@
 				<br> <br> 
 				<input 	id="delallbutton" type="submit" value="Delete All">
 	</form>
-
-
 	</center>
+
+<footer>
+  		<img src="images/people2.png" width=100% height=100% > 
+  	</footer>	
 
 </body>
 </html>
