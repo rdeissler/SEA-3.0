@@ -53,7 +53,16 @@ public class PersonService { // Service
 
 	
 	
-/*	public Personen deleteAllPersons() {
-		return new Personen(personRepository.deleteAll()); 
-	} */
+//	public Personen deleteAllPersons() {
+//		return Personen(personRepository.deleteAll()); 
+//	}
+	public boolean deleteAllPersons() {
+		
+	
+		
+		boolean result = personRepository.deleteAll();
+		return result;
+		
+		}
+	
 }

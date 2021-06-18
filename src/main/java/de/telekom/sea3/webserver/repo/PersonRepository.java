@@ -51,10 +51,14 @@ public class PersonRepository { // get set Person
 		return false;
 	}	
 	
-/*	public List<Person> deleteAll() {
-		for (int i = 0; i < personen.size(); i++) {
-							personen.remove(i);
-		}
-		return personen;
-	} */
+	public boolean deleteAll() {
+		return personen.removeAll(personen);
+				}
+	
+//	public List<Person> deleteAll() {
+//		for (int i = 0; i < personen.size(); i++) {
+//							personen.remove(i);
+//		}
+//		return personen;
+//	} 
 }

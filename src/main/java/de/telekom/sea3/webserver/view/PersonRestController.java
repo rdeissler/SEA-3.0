@@ -61,10 +61,14 @@ public class PersonRestController { // View   --> liefert json Daten aus wegen @
 		return personService.update(person);
 	}
 	
-/*	@DeleteMapping("/json/persons/all")
-	public Personen deleteAllPersons() {
-		Personen personen = personService.deleteAllPersons();
-		return personen;
+//	@DeleteMapping("/json/persons/all")
+//	public Personen deleteAllPersons() {
+//		Personen personen = personService.deleteAllPersons();
+//		return personen;
+//	}
+	@DeleteMapping("/json/persons/all")
+	public boolean deleteAllPersons() {
+		boolean result = personService.deleteAllPersons();
+		return result;
 	}
-*/
 }
