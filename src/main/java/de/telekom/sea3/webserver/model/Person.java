@@ -1,18 +1,35 @@
 package de.telekom.sea3.webserver.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity   // entspricht der "Zeile" in der Datenbanktabelle
+@Table(name="persons")
+
 public class Person {
 
-	private String id;
+	@Id
+	private Integer id;
+	@Column
 	private String anrede;
+	@Column
 	private String vorname;
+	@Column
 	private String nachname;
+	@Column
 	private String str;
+	@Column
 	private String hausNr;
+	@Column	
 	private String plz;
+	@Column
 	private String ort;
+	@Column
 	private String email;
 
-	public Person(String id, String anrede, String vorname, String nachname, String str, String hausNr, String plz,
+	public Person(Integer id, String anrede, String vorname, String nachname, String str, String hausNr, String plz,
 			String ort, String email) {
 		this.id = id;
 		this.anrede = anrede;
@@ -26,11 +43,11 @@ public class Person {
 
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
