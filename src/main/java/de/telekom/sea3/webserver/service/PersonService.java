@@ -1,8 +1,11 @@
 package de.telekom.sea3.webserver.service;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.*;
 import de.telekom.sea3.webserver.model.Person;
 import de.telekom.sea3.webserver.model.Personen;
 import de.telekom.sea3.webserver.repo.PersonRepository;
@@ -20,49 +23,42 @@ public class PersonService { // Service
 		this.personRepository = personRepository;
 	}
 
-	public int getSize() {
-		return personRepository.getSize();
+	public Long getSize() {
+		return personRepository.count();
 	}
 
-	public Personen getAllPersons() {
-		return new Personen(personRepository.getAll());   //Wrapper wird für json benötigt
+	public Iterable<Person> getAllPersons() {
+		return personRepository.findAll();   //Wrapper wird für json benötigt
 	}
 
-	public Person get(int id) {
-		return new Person( id,  "anrede", "vorname",  "nachname",   "str",  "hausNr",  "plz",
-				 "ort",  "email");
+	public Optional<Person> get(Long id) {
+		return personRepository.findById(id);
 	}
 
 	public Person add(Person person) {
-		personRepository.add(person);
+		personRepository.save(person);
 		System.out.println("Person wurde angelegt: " +person.toString());
 		return person;
 	}
 
-	public Person del(String id) {
-		personRepository.del(id);
+	public Person del(Long id) {
+		personRepository.deleteById(id);
 		System.out.println("Person wurde gelöscht");
 		return null;
 	}
 	
 	public Person update(Person person) {
-		personRepository.update(person);
+		personRepository.save(person);
 		System.out.println("Person wurde geändert");
 		return null;
 	}
 
 	
 	
-//	public Personen deleteAllPersons() {
-//		return Personen(personRepository.deleteAll()); 
-//	}
-	public boolean deleteAllPersons() {
-		
-	
-		
-		boolean result = personRepository.deleteAll();
-		return result;
-		
-		}
+	public Person delAll(Person person) {
+		personRepository.deleteAll();
+		System.out.println("Alle Personen wurden gelöscht");
+		return null;
+	}
 	
 }
