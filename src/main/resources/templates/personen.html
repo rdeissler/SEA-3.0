@@ -44,6 +44,7 @@
 			<th>Anrede</th>
 			<th>Vorname</th>
 			<th>Nachname</th>
+			<th>Geburtstag</th>
 			<th>Straße</th>
 			<th>Hausnummer</th>
 			<th>Postleitzahl</th>
@@ -62,8 +63,9 @@
 <li th:text="${person.anrede}">Anrede</li>
     <li th:text="${person.vorname}">Vorname</li>
     <li th:text="${person.nachname}">Nachname</li>
+    <li th:text="${person.bday}">Geburtsdatum</li>
         <li th:text="${person.str}">Straße</li>
-        <li th:text="${person.hausNr}">Hausnummer</li>
+        <li th:text="${person.hausnr}">Hausnummer</li>
         <li th:text="${person.plz}">Postleitzahl</li>
         <li th:text="${person.ort}">Ort</li>  
         <li th:text="${person.email}">Email</li>  
