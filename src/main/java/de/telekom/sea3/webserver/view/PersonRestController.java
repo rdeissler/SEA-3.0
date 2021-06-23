@@ -37,12 +37,12 @@ public class PersonRestController { // View   --> liefert json Daten aus wegen @
 	}
 
 	@GetMapping("/json/persons/size")
-	public Size getSize() {
-		return new Size(personService.getSize());
+	public Long getSize() {
+		return personService.getSize() ;
 	}
 
 	@GetMapping("/json/person/{id}") // {id} anstelle einer festen ID z.B. 42
-	public Person getPerson(@PathVariable("id") int id) {
+	public Person getPerson(@PathVariable("id") Long id) {
 		return personService.get(id);
 	}
 
@@ -52,7 +52,7 @@ public class PersonRestController { // View   --> liefert json Daten aus wegen @
 	}
 
 	@DeleteMapping("/json/person/{id}")	// {id} anstelle einer festen ID z.B. 42
-	public Person delPerson(@PathVariable("id") String id) {
+	public Person delPerson(@PathVariable("id") Long id) {
 		return personService.del(id);
 	}
 	
@@ -66,9 +66,10 @@ public class PersonRestController { // View   --> liefert json Daten aus wegen @
 //		Personen personen = personService.deleteAllPersons();
 //		return personen;
 //	}
-	@DeleteMapping("/json/persons/all")
-	public boolean deleteAllPersons() {
-		boolean result = personService.deleteAllPersons();
-		return result;
-	}
+//	@DeleteMapping("/json/persons/all")
+//	public boolean deleteAllPersons() {
+//		boolean result = personService.deleteAllPersons();
+//		return result;
+//	}
 }
+//CREATE TABLE persons ( ID BIGINT primary key, ANREDE VARCHAR(10), VORNAME VARCHAR(20), NACHNAME VARCHAR(20), STR VARCHAR(40), HAUSNR VARCHAR(5), PLZ VARCHAR(5), ORT VARCHAR(20), EMAIL VARCHAR(40));
