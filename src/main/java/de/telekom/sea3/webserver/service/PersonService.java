@@ -13,7 +13,7 @@ import de.telekom.sea3.webserver.repo.PersonRepository;
 @Service
 public class PersonService { // Service
 
-	private static PersonRepository personRepository;
+	private PersonRepository personRepository;
 
 	@Autowired
 	public PersonService(PersonRepository personRepository) {
@@ -27,13 +27,25 @@ public class PersonService { // Service
 		return personRepository.count();
 	}
 
-	public Iterable<Person> getAllPersons() {
-		return personRepository.findAll();   //Wrapper wird für json benötigt
+	public Personen getAllPersons() {
+		Personen personen = new Personen();
+		for( Person p : personRepository.findAll()) {
+			personen.getPersonen().add(p);
+			}
+			return personen;
 	}
 
-	public Optional<Person> get(Long id) {
-		return personRepository.findById(id);
+//	public Optional<Person> get(Long id) {
+//		return personRepository.findById(id);
+//	}
+	public Person get(Long id) {
+		if (personRepository.findById(id).isPresent()) {
+			return personRepository.findById(id).get();
+		} else {
+			return null;
+		}
 	}
+	
 
 	public Person add(Person person) {
 		personRepository.save(person);
@@ -55,10 +67,10 @@ public class PersonService { // Service
 
 	
 	
-	public Person delAll(Person person) {
-		personRepository.deleteAll();
-		System.out.println("Alle Personen wurden gelöscht");
-		return null;
+//	public Person delAll(Person person) {
+//		personRepository.deleteAll();
+//		System.out.println("Alle Personen wurden gelöscht");
+//		return null;
 	}
 	
-}
+

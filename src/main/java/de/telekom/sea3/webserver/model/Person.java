@@ -10,6 +10,9 @@ import javax.persistence.Table;
 
 public class Person {
 
+	public Person() {
+	}
+
 	@Id
 	private Long id;
 	@Column

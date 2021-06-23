@@ -7,6 +7,11 @@ public class Personen {
 	
 	private List<Person> personen = new ArrayList<Person>();
 
+	
+	public Personen() {
+		
+	}
+	
 	public Personen(List<Person> all) {
 		this.personen = all;
 	}

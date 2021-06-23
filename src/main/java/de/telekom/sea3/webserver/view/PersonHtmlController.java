@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import de.telekom.sea3.webserver.model.Person;
 import de.telekom.sea3.webserver.model.Personen;
 import de.telekom.sea3.webserver.service.PersonService;
 
@@ -29,13 +30,15 @@ public class PersonHtmlController { // View
 
 	// Dynamischer Aufbau der Webseite durch Size (%d), die während der Laufzeit
 	// ermittelt wird (Anzahl der Personen)
+	// URL: http//localhost:8222/size
 	@GetMapping("/size")
-	@ResponseBody // sagt Spring Framework, dass die Antwort in den Body gepackt werden soll
+	@ResponseBody // sagt Spring Framework, dass die Antwort in den Body gepackt werden soll und nicht über das Template.
 	public String getSize() {
 		String string5 = String.format(HTMLTEMPLATE, personService.getSize()); // Möglichkeit 5
 		return string5;
 	}
-
+	
+	// URL: http://localhost:8222/counter
 	@GetMapping("/counter")
 	public String htmlName(Model model,
 			@RequestParam(value = "name", required = false, defaultValue = "Welt") String string
@@ -45,6 +48,7 @@ public class PersonHtmlController { // View
 		return "count";
 	}
 
+	// URL: http://localhost:8222/sizeanzahl
 	@GetMapping("/sizeanzahl")
 	public String getSize2(Model model)
 	{	
@@ -52,7 +56,8 @@ public class PersonHtmlController { // View
 		return "size";
 	}
 	
-	@GetMapping("/personenliste") //kein ResponseBody, da RsponseBody den Weg über das Thymeleaf Template verhindert (habe schon alles)
+	// URL: http://localhost:8222/personenliste
+	@GetMapping("/personenliste") //kein ResponseBody, da ResponseBody den Weg über das Thymeleaf Template verhindert (habe schon alles)
 	public String getPersonen(Model model)
 	{		
 		Personen personen = personService.getAllPersons();
