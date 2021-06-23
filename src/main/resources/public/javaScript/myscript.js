@@ -19,7 +19,7 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
 			+ "<td>" + laufvariable.vorname + "</td>"
 			+ "<td>" + laufvariable.nachname + "</td>"
 			+ "<td>" + laufvariable.str + "</td>"
-			+ "<td>" + laufvariable.hausNr + "</td>"
+			+ "<td>" + laufvariable.hausnr + "</td>"
 			+ "<td>" + laufvariable.plz + "</td>"
 			+ "<td>" + laufvariable.ort + "</td>"
 			+ "<td>" + laufvariable.email + "</td>"
@@ -65,8 +65,8 @@ function oninputclick(event) {
 	console.log(nachname);
 	var str = document.getElementById("str").value;
 	console.log(str);
-	var hausNr = document.getElementById("hausNr").value;
-	console.log(hausNr);
+	var hausnr = document.getElementById("hausnr").value;
+	console.log(hausnr);
 	var plz = document.getElementById("plz").value;
 	console.log(plz);
 	var ort = document.getElementById("ort").value;
@@ -74,7 +74,7 @@ function oninputclick(event) {
 	var email = document.getElementById("email").value;
 	console.log(email);
 
-	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
+	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausnr": "${hausnr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
 	console.log(jsondata);
 
 	fetch(`/json/person`, {   // fetch ist hier ein Push zum Server
@@ -118,8 +118,8 @@ function oninputupdateclick(event) {
 	console.log(nachname);
 	var str = document.getElementById("str").value;
 	console.log(str);
-	var hausNr = document.getElementById("hausNr").value;
-	console.log(hausNr);
+	var hausnr = document.getElementById("hausnr").value;
+	console.log(hausnr);
 	var plz = document.getElementById("plz").value;
 	console.log(plz);
 	var ort = document.getElementById("ort").value;
@@ -127,7 +127,7 @@ function oninputupdateclick(event) {
 	var email = document.getElementById("email").value;
 	console.log(email);
 
-	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausNr": "${hausNr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
+	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausnr": "${hausnr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
 	console.log(jsondata);
 	
 	fetch(`/json/person`, {  

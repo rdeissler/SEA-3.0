@@ -24,7 +24,7 @@ public class Person {
 	@Column
 	private String str;
 	@Column
-	private String hausNr;
+	private String hausnr;
 	@Column	
 	private String plz;
 	@Column
@@ -32,14 +32,14 @@ public class Person {
 	@Column
 	private String email;
 
-	public Person(Long id, String anrede, String vorname, String nachname, String str, String hausNr, String plz,
+	public Person(Long id, String anrede, String vorname, String nachname, String str, String hausnr, String plz,
 			String ort, String email) {
 		this.id = id;
 		this.anrede = anrede;
 		this.vorname = vorname;
 		this.nachname = nachname;
 		this.str = str;
-		this.hausNr = hausNr;
+		this.hausnr = hausnr;
 		this.plz = plz;
 		this.ort = ort;
 		this.email = email;
@@ -87,11 +87,11 @@ public class Person {
 	}
 
 	public String getHausNr() {
-		return hausNr;
+		return hausnr;
 	}
 
-	public void setHausNr(String hausNr) {
-		this.hausNr = hausNr;
+	public void setHausNr(String hausnr) {
+		this.hausnr = hausnr;
 	}
 
 	public String getPlz() {
