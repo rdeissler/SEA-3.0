@@ -2,7 +2,7 @@
 <html lang="de">
 <!-- head: NICHT-sichtbare Bereich -->
 <head>
-<title>Personen</title> <
+<title>Personen</title> 
 <!-- 
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/skeleton.css">
@@ -32,17 +32,19 @@
 	<!-- https://wiki.selfhtml.org/wiki/HTML/Tabellen/Aufbau_einer_Tabelle -->
 	<table class="table table-grey table-striped" id="idTable001">
 		<tr>
-			<th>Nr.</th>
 			<th>ID</th>
 			<th>Anrede</th>
 			<th>Vorname</th>
 			<th>Nachname</th>
+			<th>Geburtstag</th>
 			<th>Straße</th>
 			<th>Hausnummer</th>
 			<th>Postleitzahl</th>
 			<th>Ort</th>
 			<th>Email</th>
 			<th>pic</th>
+			<th>Version</th>
+			
 		</tr>
 	</table class="table">
 	<form id="submit">
@@ -56,16 +58,23 @@
 				<option value="Divers">Divers</option>
 			</select> <br> <label for="id">ID:</label><br> <input type="text"
 				id="id" name="id"><br> <label for="vorname">Vorname:</label><br>
-			<input type="text" id="vorname" name="vorname"><br> <label
-				for="nachname">Nachname:</label><br> <input type="text"
-				id="nachname" name="nachname"><br> <label for="str">Straße:</label><br>
+			<input type="text" id="vorname" name="vorname"><br> 
+			<label	for="nachname">Nachname:</label><br> 
+			<input type="text" id="nachname" name="nachname"><br> 
+			<label	for="bday">Geburtstag:</label><br> 
+				<input type="date" id="bday" name="bday"><br> 
+			<label for="str">Straße:</label><br>
 			<input type="text" id="str" name="str"><br> <label
 				for="hausnr">Hausnummer:</label><br> <input type="text"
 				id="hausnr" name="hausnr"><br> <label for="plz">Postleitzahl:</label><br>
 			<input type="text" id="plz" name="plz"><br> <label
 				for="ort">Ort:</label><br> <input type="text" id="ort"
-				name="ort"><br> <label for="email">Email:</label><br>
+				name="ort"><br> 
+			<label for="email">Email:</label><br>
 			<input type="text" id="email" name="email"><br> <br>
+
+			<label for="version">Version:</label><br>
+			<input type="text" id="version" name="version"><br> <br>
 
 			<input id="button" type="submit" value="Submit"> <br> <br>
 			<input id="delbutton" type="submit" value="Delete"> <br>

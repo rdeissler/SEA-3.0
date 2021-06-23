@@ -6,28 +6,29 @@ function getJson(irgendwas) { 	// irgendwas beinhaltet json mit allen kommunikat
 }
 // celle ersetzen
 function getTxtFromJsonUndPackInsHTML(myjson) {
-	console.log("Starting2");
+
 	var tabelle = document.getElementById("idTable001");
-	var i = 1;
+//	var i = 1;
 	for (var laufvariable of myjson.personen) {
 		// neue Zeile am Ende der exist. Tabelle anfügen
 		tabelle.insertAdjacentHTML("beforeend",
 			"<tr>"
-			+ "<td> ${i++} </td>"
+	//		+ "<td> ${i++} </td>"
 			+ "<td>" + laufvariable.id + "</td>"
 			+ "<td>" + laufvariable.anrede + "</td>"
 			+ "<td>" + laufvariable.vorname + "</td>"
 			+ "<td>" + laufvariable.nachname + "</td>"
+			+ "<td>" + laufvariable.bday + "</td>"
 			+ "<td>" + laufvariable.str + "</td>"
 			+ "<td>" + laufvariable.hausnr + "</td>"
 			+ "<td>" + laufvariable.plz + "</td>"
 			+ "<td>" + laufvariable.ort + "</td>"
 			+ "<td>" + laufvariable.email + "</td>"
 			+ "<td><img src='" + getIcon(laufvariable.anrede) + "'></td>"
+			+ "<td>" + laufvariable.version + "</td>"
 			
 			+ "</tr>"
 		)
-			console.log("Starting3");
 		//			+ "<td><img src='images/man.png'></td>"
 
 		//		document.getElementById("id003").textContent = laufvariable.anrede;
@@ -55,14 +56,16 @@ function getIcon(anrede) {
 function oninputclick(event) {
 	event.preventDefault();  // verhindert GET Request, Event wird nicht weiter vom Browser bearbeitet
 	console.log("Click");
-	var id = document.getElementById("id").value;
-	console.log(id);
+//	var id = document.getElementById("id").value;
+//	console.log(id);
 	var anrede = document.getElementById("anrede").value;
 	console.log(anrede);
 	var vorname = document.getElementById("vorname").value;
 	console.log(vorname);
 	var nachname = document.getElementById("nachname").value;
 	console.log(nachname);
+	var bday = document.getElementById("bday").value;
+	console.log(bday);
 	var str = document.getElementById("str").value;
 	console.log(str);
 	var hausnr = document.getElementById("hausnr").value;
@@ -73,8 +76,10 @@ function oninputclick(event) {
 	console.log(ort);
 	var email = document.getElementById("email").value;
 	console.log(email);
+//	var version = document.getElementById("version").value;
+//	console.log(email);
 
-	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausnr": "${hausnr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
+	var jsondata = `{"anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}","bday": "${bday}", "str": "${str}", "hausnr": "${hausnr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
 	console.log(jsondata);
 
 	fetch(`/json/person`, {   // fetch ist hier ein Push zum Server
@@ -116,6 +121,8 @@ function oninputupdateclick(event) {
 	console.log(vorname);
 	var nachname = document.getElementById("nachname").value;
 	console.log(nachname);
+	var bday = document.getElementById("bday").value;
+	console.log(bday);
 	var str = document.getElementById("str").value;
 	console.log(str);
 	var hausnr = document.getElementById("hausnr").value;
@@ -126,8 +133,10 @@ function oninputupdateclick(event) {
 	console.log(ort);
 	var email = document.getElementById("email").value;
 	console.log(email);
+	var version = document.getElementById("version").value;
+	console.log(email);
 
-	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}", "str": "${str}", "hausnr": "${hausnr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}"}`;
+	var jsondata = `{"id": "${id}", "anrede": "${anrede}", "vorname": "${vorname}", "nachname": "${nachname}","bday": "${bday}", "str": "${str}", "hausnr": "${hausnr}", "plz": "${plz}", "ort": "${ort}", "email": "${email}", "version": "${version}"}`;
 	console.log(jsondata);
 	
 	fetch(`/json/person`, {  
@@ -166,8 +175,6 @@ inputdelall.addEventListener("click", oninputdelallclick);
 var input = document.getElementById("button");
 input.addEventListener("click", oninputclick);
 
-
-console.log("Starting1");
 
 // fetch Statement (Anweisung)
 //fetch("http://localhost:8080/personen.json")
