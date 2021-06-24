@@ -1,0 +1,12 @@
+2021-06-24 15:04:33.563  INFO 21467 --- [main] de.telekom.sea3.webserver.WebServer      : Starting WebServer v1.0 using Java 11.0.11 on sea20-Latitude-5501 with PID 21467 (/home/sea20/eclipse-workspace/SEA-3.0/target/SEA-3.0-1.0.jar started by sea20 in /home/sea20/eclipse-workspace/SEA-3.0)
+2021-06-24 15:04:33.565  INFO 21467 --- [main] de.telekom.sea3.webserver.WebServer      : No active profile set, falling back to default profiles: default
+2021-06-24 15:04:36.981  INFO 21467 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService@70101687
+2021-06-24 15:04:36.981  INFO 21467 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService
+2021-06-24 15:04:36.981  INFO 21467 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice durch Annnotation instanziiert: org.springframework.data.jpa.repository.support.SimpleJpaRepository@1ffcf674
+2021-06-24 15:04:37.582  INFO 21467 --- [main] de.telekom.sea3.webserver.WebServer      : Started WebServer in 4.608 seconds (JVM running for 5.05)
+2021-06-24 15:33:08.606  INFO 22353 --- [main] de.telekom.sea3.webserver.WebServer      : Starting WebServer v1.0 using Java 11.0.11 on sea20-Latitude-5501 with PID 22353 (/home/sea20/eclipse-workspace/SEA-3.0/target/SEA-3.0-1.0.jar started by sea20 in /home/sea20/eclipse-workspace/SEA-3.0)
+2021-06-24 15:33:08.608  INFO 22353 --- [main] de.telekom.sea3.webserver.WebServer      : No active profile set, falling back to default profiles: default
+2021-06-24 15:33:11.119  INFO 22353 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService@724c5cbe
+2021-06-24 15:33:11.119  INFO 22353 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService
+2021-06-24 15:33:11.120  INFO 22353 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice durch Annnotation instanziiert: org.springframework.data.jpa.repository.support.SimpleJpaRepository@40f8f5a8
+2021-06-24 15:33:11.505  INFO 22353 --- [main] de.telekom.sea3.webserver.WebServer      : Started WebServer in 3.302 seconds (JVM running for 3.672)
