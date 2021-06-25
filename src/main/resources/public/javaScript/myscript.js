@@ -15,6 +15,7 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
 			"<tr>"
 	//		+ "<td> ${i++} </td>"
 			+ "<td>" + laufvariable.id + "</td>"
+			+ "<td><img src='" + getIcon(laufvariable.anrede) + "'></td>"
 			+ "<td>" + laufvariable.anrede + "</td>"
 			+ "<td>" + laufvariable.vorname + "</td>"
 			+ "<td>" + laufvariable.nachname + "</td>"
@@ -24,7 +25,6 @@ function getTxtFromJsonUndPackInsHTML(myjson) {
 			+ "<td>" + laufvariable.plz + "</td>"
 			+ "<td>" + laufvariable.ort + "</td>"
 			+ "<td>" + laufvariable.email + "</td>"
-			+ "<td><img src='" + getIcon(laufvariable.anrede) + "'></td>"
 			+ "<td>" + laufvariable.version + "</td>"
 			
 			+ "</tr>"
