@@ -1,6 +1,12 @@
-2021-06-28 10:18:31.729  INFO 11590 --- [main] de.telekom.sea3.webserver.WebServer      : Starting WebServer v1.0 using Java 11.0.11 on sea20-Latitude-5501 with PID 11590 (/home/sea20/eclipse-workspace/SEA-3.0/target/SEA-3.0-1.0.jar started by sea20 in /home/sea20/eclipse-workspace/SEA-3.0)
-2021-06-28 10:18:31.738  INFO 11590 --- [main] de.telekom.sea3.webserver.WebServer      : No active profile set, falling back to default profiles: default
-2021-06-28 10:18:34.352  INFO 11590 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService@21618fa7
-2021-06-28 10:18:34.353  INFO 11590 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService
-2021-06-28 10:18:34.353  INFO 11590 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice durch Annnotation instanziiert: org.springframework.data.jpa.repository.support.SimpleJpaRepository@4df39a88
-2021-06-28 10:18:34.814  INFO 11590 --- [main] de.telekom.sea3.webserver.WebServer      : Started WebServer in 3.548 seconds (JVM running for 3.952)
+2021-06-30 09:47:00.588  INFO 20892 --- [main] de.telekom.sea3.webserver.WebServer      : Starting WebServer v1.0 using Java 11.0.11 on sea20-Latitude-5501 with PID 20892 (/home/sea20/eclipse-workspace/SEA-3.0/target/SEA-3.0-1.0.jar started by sea20 in /home/sea20/eclipse-workspace/SEA-3.0)
+2021-06-30 09:47:00.595  INFO 20892 --- [main] de.telekom.sea3.webserver.WebServer      : No active profile set, falling back to default profiles: default
+2021-06-30 09:47:03.029  INFO 20892 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService@4d7aaca2
+2021-06-30 09:47:03.029  INFO 20892 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService
+2021-06-30 09:47:03.030  INFO 20892 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice durch Annnotation instanziiert: org.springframework.data.jpa.repository.support.SimpleJpaRepository@31da3d60
+2021-06-30 09:47:03.417  INFO 20892 --- [main] de.telekom.sea3.webserver.WebServer      : Started WebServer in 3.287 seconds (JVM running for 3.669)
+2021-06-30 11:24:17.309  INFO 23608 --- [main] de.telekom.sea3.webserver.WebServer      : Starting WebServer v1.0 using Java 11.0.11 on sea20-Latitude-5501 with PID 23608 (/home/sea20/eclipse-workspace/SEA-3.0/target/SEA-3.0-1.0.jar started by sea20 in /home/sea20/eclipse-workspace/SEA-3.0)
+2021-06-30 11:24:17.312  INFO 23608 --- [main] de.telekom.sea3.webserver.WebServer      : No active profile set, falling back to default profiles: default
+2021-06-30 11:24:21.907  INFO 23608 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService@62566842
+2021-06-30 11:24:21.907  INFO 23608 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice instanziiert: de.telekom.sea3.webserver.service.PersonService
+2021-06-30 11:24:21.908  INFO 23608 --- [main] d.t.s.webserver.service.PersonService    : [INFO] Personservice durch Annnotation instanziiert: org.springframework.data.jpa.repository.support.SimpleJpaRepository@65ec8b24
+2021-06-30 11:24:22.532  INFO 23608 --- [main] de.telekom.sea3.webserver.WebServer      : Started WebServer in 6.215 seconds (JVM running for 6.87)
